@@ -3,6 +3,7 @@ import { Component } from 'react';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Statistics from './Statistics/Statistics';
 import SectionTitle from './SectionTitle/SectionTitle';
+import NotificationMessage from './NotificationMessage/NotificationMessage';
 
 class App extends Component {
   
@@ -47,15 +48,18 @@ class App extends Component {
           onCountBad={this.countBad}
         />
         <SectionTitle
-          title={"Statistics"}
-        />
-        <Statistics
+            title={"Statistics"}
+          />
+        {total === 0 ?
+          (<NotificationMessage />) :
+        (<Statistics
           good={this.state.good}
           neutral={this.state.neutral}
           bad={this.state.bad}
           total={total}
           positive={positive}
-        />
+        />)
+        }
       </div>
     )
   }
