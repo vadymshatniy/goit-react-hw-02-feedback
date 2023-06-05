@@ -1,14 +1,16 @@
-
-
-export default function Statistics({ good, neutral, bad }) {
+import React from 'react';
+ 
+function Statistics({ good, neutral, bad, total, positive }) {
+  
     return (
-        <div>
-            <h2>Statistics</h2>
+        <section>
             <p>Good:{good}</p>
             <p>Neutral:{neutral}</p>
             <p>Bad:{bad}</p>
-            <p>Total:</p>
-            <p>Positive feedback:</p>
-        </div>
-    )
+            <p>Total:{total}</p>
+            <p>Positive feedback:{positive}%</p>
+        </section>
+    );
 };
+
+export default Statistics;

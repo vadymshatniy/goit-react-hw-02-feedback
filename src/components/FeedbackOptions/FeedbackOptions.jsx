@@ -1,21 +1,16 @@
+import React from 'react';
 
-
-export default function FeedbackOptions({ options, onLeaveFeedback }) {
+export default function FeedbackOptions({ onCountGood, onCountNeutral, onCountBad }) {
     return (
-        <section class="buttons">
-            <h2>Please leave feedback</h2>
-            <div>
-                <input type="radio" class="radio" id="good"></input>
-                <label for="good">Good</label>
-            </div>
-            <div>
-                <input type="radio" class="radio" id="neutral"></input>
-                <label for="neutral">Neutral</label>
-            </div>
-            <div>
-                <input type="radio" class="radio" id="bad"></input>
-                <label for="bad">Bad</label>
-            </div>
+        <section>
+            <button type="button" className="button" onClick={onCountGood}>Good</button>
+            <button type="button" className="button" onClick={onCountNeutral}>Neutral</button>
+            <button type="button" className="button" onClick={onCountBad}>Bad</button>
         </section>
     )
 };
+
+
+
+
+
