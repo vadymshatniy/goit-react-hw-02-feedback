@@ -4,6 +4,7 @@ import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Statistics from './Statistics/Statistics';
 import SectionTitle from './SectionTitle/SectionTitle';
 import NotificationMessage from './NotificationMessage/NotificationMessage';
+import profileStyles from "./App.module.css";
 
 class App extends Component {
   
@@ -38,7 +39,7 @@ class App extends Component {
     const total = this.countTotalFeedback()
     const positive = this.countPositiveFeedbackPercentage()
     return (
-      <div>  
+      <div className={profileStyles.container}>  
         <SectionTitle
           title={"Please leave feedback"}
         />
