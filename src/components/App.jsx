@@ -13,21 +13,21 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   }
-    countGood = () => {
+    onChangeCount = (type) => {
         this.setState(prevState => ({
-            good: prevState.good + 1,
+            [type]: prevState[type] + 1,
         }))
     };
-    countNeutral = () => {
-        this.setState(prevState => ({
-            neutral: prevState.neutral + 1,
-        }))
-    };
-    countBad = () => {
-        this.setState(prevState => ({
-            bad: prevState.bad + 1,
-        }));
-    };
+    // countNeutral = () => {
+    //     this.setState(prevState => ({
+    //         neutral: prevState.neutral + 1,
+    //     }))
+    // };
+    // countBad = () => {
+    //     this.setState(prevState => ({
+    //         bad: prevState.bad + 1,
+    //     }));
+    // };
     countTotalFeedback = () => {
         return (this.state.good + this.state.neutral + this.state.bad)
     }
@@ -44,6 +44,7 @@ class App extends Component {
           title={"Please leave feedback"}
         />
         <FeedbackOptions
+          options={Object.keys(this.state)}
           onCountGood={this.countGood}
           onCountNeutral={this.countNeutral}
           onCountBad={this.countBad}
