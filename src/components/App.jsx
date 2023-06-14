@@ -18,16 +18,6 @@ class App extends Component {
             [type]: prevState[type] + 1,
         }))
     };
-    // countNeutral = () => {
-    //     this.setState(prevState => ({
-    //         neutral: prevState.neutral + 1,
-    //     }))
-    // };
-    // countBad = () => {
-    //     this.setState(prevState => ({
-    //         bad: prevState.bad + 1,
-    //     }));
-    // };
     countTotalFeedback = () => {
         return (this.state.good + this.state.neutral + this.state.bad)
     }
@@ -45,9 +35,7 @@ class App extends Component {
         />
         <FeedbackOptions
           options={Object.keys(this.state)}
-          onCountGood={this.countGood}
-          onCountNeutral={this.countNeutral}
-          onCountBad={this.countBad}
+          onCountGood={this.onChangeCount}
         />
         <SectionTitle
             title={"Statistics"}
