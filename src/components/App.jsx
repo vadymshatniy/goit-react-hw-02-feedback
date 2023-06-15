@@ -35,7 +35,7 @@ class App extends Component {
         />
         <FeedbackOptions
           options={Object.keys(this.state)}
-          onCountGood={this.onChangeCount}
+          onLeaveFeedback={this.onChangeCount}
         />
         <SectionTitle
             title={"Statistics"}
